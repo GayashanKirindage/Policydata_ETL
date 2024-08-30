@@ -1,0 +1,9 @@
+{
+	"name": "gpolicydataadf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "50de7640-6592-4a1c-a2f1-5b0bd09fb465",
+		"tenantId": "170c14fc-2623-42dc-b0a7-9629ea692397"
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"name": "SQLDB_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQL_DB_LS2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "branch_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "branch_country",
+				"type": "varchar"
+			},
+			{
+				"name": "branch_city",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Branch"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

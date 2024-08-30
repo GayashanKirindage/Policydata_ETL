@@ -1,0 +1,17 @@
+{
+	"name": "SQL_DB_LS2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "policydatasqlserver.database.windows.net",
+			"database": "policydatadatabase",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "gayashan",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDA5NDMwNDU3LTQwNUQtNDcyMS05QTFDLTdERkJGQjFCQzBCQl81MjdhMDNiNS1kYTcxLTQ0ZWUtODM4OS1lMjFkYTQ0Yjc3MWEiDQp9"
+		}
+	}
+}
