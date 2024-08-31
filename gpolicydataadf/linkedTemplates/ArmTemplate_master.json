@@ -1,0 +1,98 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "gpolicydataadf"
+		},
+		"ADLS_LS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLS_LS'"
+		},
+		"AzureDatabricks_LS_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks_LS'"
+		},
+		"SQL_DB_LS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SQL_DB_LS'"
+		},
+		"SQL_DB_LS2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SQL_DB_LS2'"
+		},
+		"ADLS_LS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://gpolicysystemadls.dfs.core.windows.net/"
+		},
+		"SQL_DB_LS2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "policydatasqlserver.database.windows.net"
+		},
+		"SQL_DB_LS2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "policydatadatabase"
+		},
+		"SQL_DB_LS2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "gayashan"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "gpolicydataadf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ADLS_LS_accountKey": {
+						"value": "[parameters('ADLS_LS_accountKey')]"
+					},
+					"AzureDatabricks_LS_accessToken": {
+						"value": "[parameters('AzureDatabricks_LS_accessToken')]"
+					},
+					"SQL_DB_LS_connectionString": {
+						"value": "[parameters('SQL_DB_LS_connectionString')]"
+					},
+					"SQL_DB_LS2_password": {
+						"value": "[parameters('SQL_DB_LS2_password')]"
+					},
+					"ADLS_LS_properties_typeProperties_url": {
+						"value": "[parameters('ADLS_LS_properties_typeProperties_url')]"
+					},
+					"SQL_DB_LS2_properties_typeProperties_server": {
+						"value": "[parameters('SQL_DB_LS2_properties_typeProperties_server')]"
+					},
+					"SQL_DB_LS2_properties_typeProperties_database": {
+						"value": "[parameters('SQL_DB_LS2_properties_typeProperties_database')]"
+					},
+					"SQL_DB_LS2_properties_typeProperties_userName": {
+						"value": "[parameters('SQL_DB_LS2_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

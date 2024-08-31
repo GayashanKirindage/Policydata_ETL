@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "gpolicydataadf"
+		},
+		"ADLS_LS_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks_LS_accessToken": {
+			"value": ""
+		},
+		"SQL_DB_LS_connectionString": {
+			"value": ""
+		},
+		"SQL_DB_LS2_password": {
+			"value": ""
+		},
+		"ADLS_LS_properties_typeProperties_url": {
+			"value": "https://gpolicysystemadls.dfs.core.windows.net/"
+		},
+		"SQL_DB_LS2_properties_typeProperties_server": {
+			"value": "policydatasqlserver.database.windows.net"
+		},
+		"SQL_DB_LS2_properties_typeProperties_database": {
+			"value": "policydatadatabase"
+		},
+		"SQL_DB_LS2_properties_typeProperties_userName": {
+			"value": "gayashan"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
